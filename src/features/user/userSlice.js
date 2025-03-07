@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 
 const themes = {
   winter: 'winter',
-  dracula: 'dracula',
+  night: 'night',
 };
 
 const getUserFromLocalStorage = () => {
@@ -36,8 +36,8 @@ const userSlice = createSlice({
       toast.success('Logged out successfully');
     },
     toggleTheme: (state) => {
-      const { dracula, winter } = themes;
-      state.theme = state.theme === dracula ? winter : dracula;
+      const { night, winter } = themes;
+      state.theme = state.theme === night ? winter : night;
       document.documentElement.setAttribute('data-theme', state.theme);
       localStorage.setItem('theme', state.theme);
     },
